@@ -1,0 +1,332 @@
+[
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 4,
+        "fields": {
+            "descricao": "Instalação Nova - Fibra + TV",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 5,
+        "fields": {
+            "descricao": "Instalação - Ponto Adicional TV",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 6,
+        "fields": {
+            "descricao": "Instalação - Wifi Mesh",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 7,
+        "fields": {
+            "descricao": "Instalação - Wifi Corporativo",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 7,
+        "fields": {
+            "descricao": "Instalação - Wifi Corporativo",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 8,
+        "fields": {
+            "descricao": "Recolhimento de equipamento - Fibra",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 9,
+        "fields": {
+            "descricao": "Recolhimento de equipamento - Rádio",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 10,
+        "fields": {
+            "descricao": "Recolhimento de equipamento - TV",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 11,
+        "fields": {
+            "descricao": "Recolhimento de equipamento - Fibra + TV",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 12,
+        "fields": {
+            "descricao": "Recolhimento de equipamento - Wifi Adicional",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 13,
+        "fields": {
+            "descricao": "Reativação - Fibra",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 14,
+        "fields": {
+            "descricao": "Reativação - Rádio",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 15,
+        "fields": {
+            "descricao": "Reativação - Fibra + TV",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 16,
+        "fields": {
+            "descricao": "Cancelamento - Fibra",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 17,
+        "fields": {
+            "descricao": "Cancelamento - Rádio",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 18,
+        "fields": {
+            "descricao": "Cancelamento - TV",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 19,
+        "fields": {
+            "descricao": "Cancelamento - Fibra + TV",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 20,
+        "fields": {
+            "descricao": "Cancelamento - Wifi Adicional",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 21,
+        "fields": {
+            "descricao": "Reparo Técnico - Fibra",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 22,
+        "fields": {
+            "descricao": "Reparo Técnico - Rádio",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 23,
+        "fields": {
+            "descricao": "Reparo Técnico - TV",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 24,
+        "fields": {
+            "descricao": "Reparo Técnico - Wifi Mesh",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 25,
+        "fields": {
+            "descricao": "Reparo Técnico - Wifi Corporativo",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 26,
+        "fields": {
+            "descricao": "Serviço de Configuração - Redirecionamento de Portas",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 27,
+        "fields": {
+            "descricao": "Serviço de Configuração - IP Público",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 28,
+        "fields": {
+            "descricao": "Serviço de Configuração - LAN to LAN",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 29,
+        "fields": {
+            "descricao": "Serviço de Configuração - L2VPN MPLS",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 30,
+        "fields": {
+            "descricao": "Serviço de Manutenção - Troca de Senha de WiFi",
+            "sla": "48"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 31,
+        "fields": {
+            "descricao": "Serviço de Manutenção - Redirecionamento de Portas",
+            "sla": "48"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 32,
+        "fields": {
+            "descricao": "Serviço de Manutenção - IP Público",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 33,
+        "fields": {
+            "descricao": "Serviço de Manutenção - LAN to LAN",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 34,
+        "fields": {
+            "descricao": "Serviço de Manutenção - L2VPN MPLS",
+            "sla": "24"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 35,
+        "fields": {
+            "descricao": "Mudança de Endereço - Fibra",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 36,
+        "fields": {
+            "descricao": "Mudança de Endereço - Rádio",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 37,
+        "fields": {
+            "descricao": "Mudança de Local do Ponto",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 38,
+        "fields": {
+            "descricao": "Migração de Tecnologia",
+            "sla": "72"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 39,
+        "fields": {
+            "descricao": "Troca de ONU/Roteador para Upgrade",
+            "sla": "48"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 40,
+        "fields": {
+            "descricao": "Viabilidade Técnica - Fibra Óptica",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 41,
+        "fields": {
+            "descricao": "Viabilidade Técnica - Rádio",
+            "sla": "96"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 42,
+        "fields": {
+            "descricao": "Serviço de Manutenção - Preventiva",
+            "sla": "96",
+            "status": "False"
+        }
+    },
+    {
+        "model": "tecnicos.SLA_OS",
+        "pk": 43,
+        "fields": {
+            "descricao": "Mudança de titularidade",
+            "sla": "48",
+            "status": "False"
+        }
+    }
+]

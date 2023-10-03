@@ -1,0 +1,23 @@
+[
+    {
+        "model": "tecnicos.TempoSLA",
+        "pk": 1,
+        "fields": {
+            "sla": "2"
+        }
+    },
+    {
+        "model": "tecnicos.TempoSLA",
+        "pk": 2,
+        "fields": {
+            "sla": "6"
+        }
+    },
+    {
+        "model": "tecnicos.TempoSLA",
+        "pk": 3,
+        "fields": {
+            "sla": "12"
+        }
+    }
+]

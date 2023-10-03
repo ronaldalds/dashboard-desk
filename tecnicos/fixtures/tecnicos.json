@@ -1,0 +1,146 @@
+[
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 1,
+        "fields": {
+            "nome": "daniel.oliveira",
+            "chat_id": "202708736"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 2,
+        "fields": {
+            "nome": "frankson.reis",
+            "chat_id": "6210748255"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 3,
+        "fields": {
+            "nome": "alan.sousa",
+            "chat_id": "2126932342"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 4,
+        "fields": {
+            "nome": "igor.magalhães",
+            "chat_id": "1699745152"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 5,
+        "fields": {
+            "nome": "joel.placido",
+            "chat_id": "2145816713"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 6,
+        "fields": {
+            "nome": "rafael.ferreira",
+            "chat_id": "1076622510"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 7,
+        "fields": {
+            "nome": "samuel.soares",
+            "chat_id": "5286290676"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 8,
+        "fields": {
+            "nome": "tarcisio.aguiar",
+            "chat_id": "2121635240"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 9,
+        "fields": {
+            "nome": "alexandre.sousa",
+            "chat_id": "2126698259"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 10,
+        "fields": {
+            "nome": "rayner.martins",
+            "chat_id": "2078247972"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 11,
+        "fields": {
+            "nome": "felipe.santos",
+            "chat_id": "2110455206"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 12,
+        "fields": {
+            "nome": "francisco.chagas",
+            "chat_id": "2141767225"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 13,
+        "fields": {
+            "nome": "higor.monteles",
+            "chat_id": "2144441300"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 14,
+        "fields": {
+            "nome": "railson.lima",
+            "chat_id": "1740447284"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 15,
+        "fields": {
+            "nome": "manmerto.sousa",
+            "chat_id": "5128618398"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 16,
+        "fields": {
+            "nome": "paulo.carvalho",
+            "chat_id": "5128711855"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 17,
+        "fields": {
+            "nome": "weliigton.lima",
+            "chat_id": "5124803012"
+        }
+    },
+    {
+        "model": "tecnicos.Tecnicos",
+        "pk": 18,
+        "fields": {
+            "nome": "arlindo.mariano",
+            "chat_id": "1962152027"
+        }
+    }
+]
