@@ -51,11 +51,11 @@ class NotificacaoTecnico:
         else:
             return -1
 
-    def tempo_de_aviso(self):
+    def tempo_de_aviso(self) -> list:
         tempo_aviso = TempoSLA.objects.all().values("sla")
         return sorted([x.get("sla") for x in tempo_aviso], reverse=True)
     
-    def notificar(self, Cod_OS, ID_Tecnico, Tempo_Aviso, Nome_Tecnico: str, Tipo_OS, Data_Abertura, Chat_ID: int):
+    def notificar(self, Cod_OS, ID_Tecnico, Tempo_Aviso, Nome_Tecnico: str, Tipo_OS, Data_Abertura, Chat_ID: int) -> None:
         Mensagens = TecnicosMensagem.objects.filter(cod_os=Cod_OS, chat_id=ID_Tecnico, sla=Tempo_Aviso, status=True).values()
 
         if len(Mensagens) == 0:
