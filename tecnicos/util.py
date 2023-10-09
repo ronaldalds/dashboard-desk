@@ -41,6 +41,7 @@ class NotificacaoTecnico:
             return response.json()
         else:
             print("Error na resposta da rota agenda técnico")
+            time.sleep(60)
             self.agenda_tecnico(tecnico)
 
     def sla_os(self, Tipo_OS) -> int:
