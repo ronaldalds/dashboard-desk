@@ -12,6 +12,6 @@ class TecnicosConfig(AppConfig):
         notificacao = NotificacaoTecnico()
         notificacao.shedule_api()
         sheduler.configure(timezone="america/fortaleza")
-        sheduler.add_job(notificacao.shedule_api, 'interval', minutes=2)
+        sheduler.add_job(notificacao.shedule_api, 'interval', minutes=10)
 
         sheduler.start()
