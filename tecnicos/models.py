@@ -6,6 +6,7 @@ class Tecnicos(models.Model):
     nome = models.CharField(max_length=200, null=False)
     chat_id = models.IntegerField(null=False)
     status = models.BooleanField(default=True)
+    
 
     class Meta:
         verbose_name_plural = 'Tecnicos'

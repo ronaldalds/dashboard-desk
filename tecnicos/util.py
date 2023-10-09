@@ -16,7 +16,7 @@ class NotificacaoTecnico:
     def __init__(self) -> None:
         self.__url_agenda = "https://mkat.online.psi.br/agenda/tecnico"
         self.__auth = env.get("TOKEN")
-        self.__bot_telegram = telebot.TeleBot(env.get("TELEGRAM"), parse_mode=None)
+        self.__bot_telegram = telebot.TeleBot(env.get("BOT_TOKEN_TELEGRAM_OST"), parse_mode=None)
     
     def agenda_tecnico(self, tecnico) -> list[dict]:
         data_json = {
@@ -62,6 +62,7 @@ class NotificacaoTecnico:
             print('Nome_Tecnico : ', Nome_Tecnico)
             Nome_Tecnico_Formatado = Nome_Tecnico.replace('.', ' ').title()
             msg = f"🔴 🟡 🟢\n\nOlá {Nome_Tecnico_Formatado}.\n\n\rFalta menos de {Tempo_Aviso} horas para a seguinte O.S. expirar.\n\n\rCód O.S. : {Cod_OS}\nTipo O.S : {Tipo_OS}\nData Abertura : {Data_Abertura}"
+            print(msg)
             try:
                 self.__bot_telegram.send_message(chat_id=int(Chat_ID), text=msg)
                 print(Chat_ID)
