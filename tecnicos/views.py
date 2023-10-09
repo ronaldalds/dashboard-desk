@@ -14,7 +14,7 @@ from .models import *
 ciclo = 60
 sheduler = BackgroundScheduler(daemon=True)
 notificacao = NotificacaoTecnico()
-# notificacao.shedule_api()
+notificacao.shedule_api()
 sheduler.configure(timezone="america/fortaleza")
 sheduler.remove_all_jobs()
 sheduler.add_job(notificacao.shedule_api, 'interval', minutes=ciclo, replace_existing=True)
@@ -30,7 +30,7 @@ class Notificacao(ViewSet):
                 schema=openapi.Schema(
                     type=openapi.TYPE_OBJECT,
                     properties={
-                        'message': openapi.Schema(type=openapi.TYPE_STRING, description='Descrição do campo 1'),
+                        'message': openapi.Schema(type=openapi.TYPE_STRING, description='Reiniciar agendamento de notificação'),
                     },
                 ),
             ),
@@ -39,6 +39,9 @@ class Notificacao(ViewSet):
     )
     def iniciar(self, request):
         global sheduler
+        global notificacao
+        sheduler.shutdown()
+        notificacao.shedule_api()
         sheduler.configure(timezone="america/fortaleza")
         sheduler.remove_all_jobs()
         sheduler.add_job(notificacao.shedule_api, 'interval', minutes=ciclo, replace_existing=True)
