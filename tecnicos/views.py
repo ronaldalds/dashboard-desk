@@ -51,12 +51,6 @@ class Notificacao(ViewSet):
         print("aqui")
         sheduler.shutdown()
         return Response({"message": "Agendador parado"}, status=status.HTTP_200_OK)
-    
-    def start(self, request):
-        global sheduler
-        print("aqui")
-        sheduler.shutdown()
-        return Response({"message": "Agendador parado"}, status=status.HTTP_200_OK)
 
 class TecnicosViewSet(ModelViewSet):
     queryset = Tecnicos.objects.filter(status=True)

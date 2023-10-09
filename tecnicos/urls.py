@@ -13,7 +13,6 @@ router.register(r'informacao', InformacoesOSViewSet)
 
 urlpatterns = [
     path('notificacao/iniciar/', Notificacao.as_view({'post': 'iniciar'}), name='iniciar_notificacao'),
-    path('notificacao/start/', Notificacao.as_view({'post': 'start'}), name='iniciar_notificacao'),
     path('notificacao/parar/', Notificacao.as_view({'delete': 'parar'}), name='parar_notificacao'),
 ]
 
