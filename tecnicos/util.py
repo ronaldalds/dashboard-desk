@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from .models import SLA_OS
 from .models import TiposOS
 from .models import TempoSLA
+from .models import InformacoesOS
 from .models import Tecnicos
 from .models import Log
 from .models import TecnicosMensagem
@@ -12,12 +13,71 @@ from dotenv import dotenv_values
 
 env = dotenv_values(".env")
 
-class NotificacaoTecnico:
+
+class Notificacao:
     def __init__(self) -> None:
-        self.__url_agenda = "https://mkat.online.psi.br/agenda/tecnico"
+        self.__url_agenda_tecnico = "https://mkat.online.psi.br/agenda/tecnico"
+        self.__url_agenda_os = "https://mkat.online.psi.br/agenda/os"
         self.__auth = env.get("TOKEN")
         self.__bot_telegram = telebot.TeleBot(env.get("BOT_TOKEN_TELEGRAM_OST"), parse_mode=None)
     
+    def agenda_os(self):
+        data_json = {
+            "token": self.__auth,
+            "de": datetime.now().strftime('%Y-%m-%d'),
+            "ate": (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d'),
+            "mk": 1
+        }
+
+        try:
+            response = requests.post(
+                self.__url_agenda_os,
+                json=data_json,
+            )
+
+        except:
+            print("Error na request da rota agenda os")
+            time.sleep(60)
+            self.agenda_os()
+        
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print("Error na resposta da rota agenda os")
+            time.sleep(60)
+            self.agenda_os()
+
+    def informacaoes(self, tipo_os) -> list[dict]:
+        tipo = TiposOS.objects.filter(tipo=tipo_os).first()
+        tipo_padrao = TiposOS.objects.filter(tipo="PADRÃO").first()
+        informacao = InformacoesOS.objects.filter(id_tipo_os=tipo).values("nome")
+        if informacao:
+            return informacao
+        else:
+            return InformacoesOS.objects.filter(id_tipo_os=tipo_padrao).values("nome")
+
+    def verificar_agenda_os(self) -> None:
+        agendamentos = self.agenda_os()
+        for agenda in agendamentos:
+            os: dict = agenda.get("os", {})
+            encerrado: bool = os.get("encerrado", False)
+            if not encerrado:
+                self.verificar_os(os)
+
+    def verificar_os(self, os: dict) -> None:
+        tipo_os: dict = os.get("tipo_os", {})
+        motivo: str = os.get("motivo", "")
+        descricao_tipo_os: str = tipo_os.get("descricao", "PADRÃO")
+        informacoes_os: list = self.informacaoes(tipo_os=descricao_tipo_os)
+        
+        for detalhes in informacoes_os:
+            if detalhes.get("nome").replace(":", "") not in motivo:
+                print(f"{os.get('cod')} - {descricao_tipo_os} - {detalhes}")
+                msg = f"🔴 🟡 🟢\n\nOS {os.get('cod', '')} - {descricao_tipo_os}.\n Falta detalhe ({detalhes.get('nome')}) no motivo da O.S."
+                self.__bot_telegram.send_message(chat_id=int(env.get("CHAT_ID_GRUPO_NOTIFICACAO_OST")), text=msg)
+                time.sleep(3)
+
+
     def agenda_tecnico(self, tecnico) -> list[dict]:
         data_json = {
             "token": self.__auth,
@@ -29,11 +89,11 @@ class NotificacaoTecnico:
 
         try:
             response = requests.post(
-                self.__url_agenda,
+                self.__url_agenda_tecnico,
                 json=data_json,
             )
         except:
-            print("Error na resposta da rota relatário")
+            print("Error na request da rota relatário")
             time.sleep(60)
             self.agenda_tecnico(tecnico)
         
@@ -68,10 +128,20 @@ class NotificacaoTecnico:
                 self.__bot_telegram.send_message(chat_id=int(Chat_ID), text=msg)
                 print(Chat_ID)
 
-                TecnicosMensagem.objects.create(chat_id=Tecnicos.objects.get(nome=Nome_Tecnico), mensagem=msg, sla=Tempo_Aviso, cod_os=Cod_OS, status=True)
+                TecnicosMensagem.objects.create(chat_id=Tecnicos.objects.get(nome=Nome_Tecnico),
+                                                mensagem=msg,
+                                                sla=Tempo_Aviso,
+                                                cod_os=Cod_OS,
+                                                status=True
+                                                )
 
             except:
-                TecnicosMensagem.objects.create(chat_id=Tecnicos.objects.get(nome=Nome_Tecnico), mensagem=msg, sla=Tempo_Aviso, cod_os=Cod_OS, status=False)
+                TecnicosMensagem.objects.create(chat_id=Tecnicos.objects.get(nome=Nome_Tecnico),
+                                                mensagem=msg,
+                                                sla=Tempo_Aviso,
+                                                cod_os=Cod_OS,
+                                                status=False
+                                                )
                 self.__bot_telegram.send_message(chat_id=int(env.get("CHAT_ID_ADM")), text=msg)
 
     def diferenca_hora(self, Data_Abertura):

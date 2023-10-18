@@ -63,6 +63,9 @@ class InformacoesOS(models.Model):
     id_tipo_os = models.ForeignKey(TiposOS, on_delete=models.CASCADE)
     nome = models.CharField(max_length=300, null=False)
 
+    def __str__(self) -> str:
+        return f"{self.nome} - {self.id_tipo_os}"
+    
     class Meta:
         verbose_name_plural = 'Informacoes_OS'
 
