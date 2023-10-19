@@ -6,7 +6,7 @@ __localcode
 *.pot
 *.pyc
 __pycache__
-static/
+/static/
 db.sqlite3
 
 # Backup files #
