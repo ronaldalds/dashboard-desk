@@ -75,7 +75,7 @@ class Notificacao:
                 print(f"{os.get('cod')} - {descricao_tipo_os} - {detalhes}")
                 msg = f"🔴 🟡 🟢\n\nOS {os.get('cod', '')} - {descricao_tipo_os}.\n Falta detalhe ({detalhes.get('nome')}) no motivo da O.S."
                 self.__bot_telegram.send_message(chat_id=int(env.get("CHAT_ID_GRUPO_NOTIFICACAO_OST")), text=msg)
-                time.sleep(3)
+                time.sleep(5)
 
 
     def agenda_tecnico(self, tecnico) -> list[dict]:
