@@ -73,7 +73,10 @@ class Notificacao:
         for detalhes in informacoes_os:
             if detalhes.get("nome").replace(":", "") not in motivo:
                 print(f"{os.get('cod')} - {descricao_tipo_os} - {detalhes}")
-                msg = f"🔴 🟡 🟢\n\nOS {os.get('cod', '')} - {descricao_tipo_os}.\n Falta detalhe ({detalhes.get('nome')}) no motivo da O.S."
+                msg_os = f"OS {os.get('cod', '')} - {descricao_tipo_os}."
+                msg_operador = f"Operador {os.get('operador_abertura', '')}."
+                msg_detalhe = f"Falta detalhe ({detalhes.get('nome')}) no motivo da O.S."
+                msg = f"🔴 🟡 🟢\n\n{msg_os}\n{msg_operador}\n{msg_detalhe}"
                 self.__bot_telegram.send_message(chat_id=int(env.get("CHAT_ID_GRUPO_NOTIFICACAO_OST")), text=msg)
                 time.sleep(5)
 
