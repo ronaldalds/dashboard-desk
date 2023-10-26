@@ -61,7 +61,8 @@ class Notificacao:
         for agenda in agendamentos:
             os: dict = agenda.get("os", {})
             encerrado: bool = os.get("encerrado", False)
-            if not encerrado:
+            operador: str = os.get("operador_abertura", "Sem Operador")
+            if not encerrado and (operador != "bot.sistemas"):
                 self.verificar_os(os)
 
     def verificar_os(self, os: dict) -> None:
